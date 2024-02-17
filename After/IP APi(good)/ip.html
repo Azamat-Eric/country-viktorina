@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center; background: linear-gradient(90deg, red,blue,yellow);-webkit-background-clip: text; color:transparent; width: 200px;">IP-address:</h1>
+    <div id="ips" style="font-size: 100px; font-weight: bold; text-align: center;"></div>
+    <div id="internet" style="font-size: 60px; color:green"></div>
+    <script type="text/javascript">
+    // Отправляем запрос на сервер для получения IP-адреса
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            // Получаем IP-адрес из ответа сервера
+            var ipAddress = data.ip;
+            document.getElementById('ips').textContent = ipAddress;
+            // Делаем что-то с полученным IP-адресом
+            console.log('Ваш IP-адрес: ' + ipAddress);
+        })
+        .catch(error => {
+            console.error('Ошибка при получении IP-адреса:', error);
+        });
+        if(navigator.onLine){
+            document.getElementById('internet').textContent = "Online";
+        }
+        else{
+            document.getElementById('internet').textContent="Offline";
+            document.getElementById('internet').style.color="red";
+        }
+</script>
+
+</body>
+</html>

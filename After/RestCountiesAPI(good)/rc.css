@@ -1,0 +1,31 @@
+body{
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+
+}
+
+table{
+    width: 90%;
+    margin-top: 100px;
+    overflow-x: hidden;
+    border: 1px solid black;
+    display: grid;
+    justify-items: center;
+}
+thead{
+    font-weight: bold;
+    font-size: 30px;
+}
+tbody{
+    font-size: 20px;
+}
+table img{
+    max-width: 200px;
+    max-height: 200px;
+}
+thead,tbody, tr,td{
+    border: 1px solid black;
+    white-space:wrap;
+    min-width: 400px;
+}
